@@ -18,8 +18,8 @@ jobs:
           name: Install dependencies
           command: npm install
       - save_cache:
-        paths:
-          - node_modules
+          paths:
+            - node_modules
           key: app-{{ checksum "package.json"}}
   deploy-to-aws-s3:
     docker:
