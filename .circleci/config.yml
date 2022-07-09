@@ -10,7 +10,7 @@ jobs:
       - run:
           name: Show current branch
           command: echo ${CIRCLE_BRANCH}
-      - restrore_cache:
+      - restore_cache:
           keys:
             - app-{{ checksum "package.json"}}
             - app-
