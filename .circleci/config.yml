@@ -52,6 +52,7 @@ jobs:
             then
               aws s3 sync ~/repo/build s3://${AWS_BUCKET_PRODUCTION} --delete
             elif ["${CIRCLE_BRANCH}" == "staging"]
+            then
               aws s3 sync ~/repo/build s3://${AWS_BUCKET_STAGING} --delete
             else
               aws s3 sync ~/repo/build s3://${AWS_DEV_BUCKET} --delete
@@ -88,6 +89,7 @@ jobs:
             then
               aws cloudfront create-invalidation --distribution-id ${PRODUCTION_DISTRIBUTION_ID} --paths /\*
             elif ["${CIRCLE_BRANCH}" == "staging"]
+            then
               aws cloudfront create-invalidation --distribution-id ${STAGING_DISTRIBUTION_ID} --paths /\*
             else
               aws cloudfront create-invalidation --distribution-id ${DEV_DISTRIBUTION_ID} --paths /\*
