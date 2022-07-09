@@ -115,7 +115,7 @@ jobs:
   notify-via-slack:
     executor: slack-executor
     steps:
-      -run: echo "Slack Notification"
+      - run: echo "Slack Notification"
       - slack/notify:
           event: 'always'
           channel: 'cinema-circleci'
