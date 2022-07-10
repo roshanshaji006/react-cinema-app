@@ -42,13 +42,13 @@ aliases:
         sudo apt-get install -y awscli
         sudo apt-get install -y python-pip python-dev build-essential
   - &build-project
-    - run:
+      run:
         name: Build Project
         command: |
           npm install
           npm run build
           cd build
-    - run:
+      run:
         name: Project
         command: |
           pwd
