@@ -1,5 +1,5 @@
 variable "prefix" {
-    default = "cinema-react-roshan"
+    default = "cinema-react-roshan-new"
 }
 
 variable "project" {
