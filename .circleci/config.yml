@@ -42,18 +42,20 @@ aliases:
         sudo apt-get install -y awscli
         sudo apt-get install -y python-pip python-dev build-essential
   - &build-project
-    - run:
-        name: Build Project
-        command: |
-          npm install
-          npm run build
-          cd build
-    - run:
-        name: Project
-        command: |
-          pwd
-          zip ../build.zip -r * .[^.]*
-          echo "Build successful"
+    run:
+      name: Build Project
+      command: |
+        npm install
+        npm run build
+        cd build
+        pwd
+  - &project
+    run:
+      name: Project
+      command: |
+        pwd
+        zip ../build.zip -r * .[^.]*
+        echo "Build successful"
 
 jobs:
   build:
@@ -63,6 +65,7 @@ jobs:
       - *show-current-branch-name
       - *restore-cache
       - *build-project
+      - *project
       - *save-cache
   linting:
     executor: app-executor
