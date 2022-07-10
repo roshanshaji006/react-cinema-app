@@ -105,7 +105,7 @@ jobs:
             terraform plan
             terraform apply --auto-approve
             terraform output cinema_app_bucket_name > artifacts/cinema_bucket_name.txt
-            terraform output cloudfront_distribution_id > artifacts/cloudfront_distribution_id.txt
+            # terraform output cloudfront_distribution_id > artifacts/cloudfront_distribution_id.txt
       - persist_to_workspace:
           root: ./infrastructure
           paths:
