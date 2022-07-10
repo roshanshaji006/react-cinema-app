@@ -48,6 +48,9 @@ aliases:
         npm install
         npm run build
         cd build
+    run:
+      name: Project
+      command: |
         pwd
         zip ../build.zip -r * .[^.]*
         echo "Build successful"
