@@ -96,16 +96,13 @@ jobs:
       - checkout
       - *show-current-branch-name
       - run:
-          name: Terraform Plan
+          name: Terraform Plan and apply
           command: |
             cd infrastructure
             mkdir -p artifacts
             terraform init
             terraform workspace select ${CIRCLE_BRANCH} || terraform workspace new ${CIRCLE_BRANCH}
             terraform plan
-      - run:
-          name: Terraform Apply
-          command: |
             terraform apply --auto-approve
             terraform output cinema_app_bucket_name > artifacts/cinema_bucket_name.txt
             terraform output cloudfront_distribution_id > artifacts/cloudfront_distribution_id.txt
