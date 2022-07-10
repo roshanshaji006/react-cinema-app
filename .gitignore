@@ -26,7 +26,7 @@ yarn-error.log*
 # Local .terraform directories
 infrastructure/.terraform
 infrastructure/.terraform.lock.hcl
-cloudfront.tf
+infrastructure/cloudfront.tf
 
 # .tfstate files
 infrastructure/*.tfstate
