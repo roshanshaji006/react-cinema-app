@@ -289,7 +289,7 @@ workflows:
       #           - master
       - notify-via-slack:
           requires:
-            - deploy-to-aws-cloudfront
+            - deploy-to-aws-s3
           filters:
             branches:
               only:
