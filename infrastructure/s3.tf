@@ -1,5 +1,5 @@
 #s3 resources
-source "aws_s3_bucket" "cinema_app_s3_bucket" {
+resource "aws_s3_bucket" "cinema_app_s3_bucket" {
   bucket = "${local.prefix}-app"
   acl    = "public-read"
   force_destroy = true
