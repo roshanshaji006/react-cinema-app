@@ -59,7 +59,7 @@ jobs:
       - checkout
       - *show-current-branch-name
       - *restore-cache
-      - *install-dependencies
+      - *build-project
       - *save-cache
   linting:
     executor: app-executor
