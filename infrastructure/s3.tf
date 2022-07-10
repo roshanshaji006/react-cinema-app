@@ -20,7 +20,7 @@ resource "aws_s3_bucket" "cinema_app_s3_bucket" {
 }
 EOF
 
-  website {
+  aws_s3_bucket_website_configuration {
     index_document = "index.html"
     error_document = "index.html"
   }
